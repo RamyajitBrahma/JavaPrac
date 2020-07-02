@@ -15,11 +15,14 @@ public class son extends father implements interface1,standalonmeinterfce{
      sonObj.interface1getdata();
      sonObj.interfce2getData();
      
-     
+     //example of typecastring objects 
      // sobObjfather this object will have access to only grandfather methods and variables becuase return type is grandfather, it wont have access to son methods or vars
-     grandfather sobObjfather = new son();
+     grandfather sobObjfather = new son(); // example of reference typecastring
+  // another eway of doing the above typecasting. here also sobObjfather1 will only have access to grandfather vars an methods
+     //Super class csn be explicityl typecasted to sublass but not the vice versa
+     grandfather sobObjfather1 = (grandfather) sonObj; 
      sobObjfather.getdataGrandFather();
-     
+     sobObjfather1.getdataGrandFather();
      //Runtime polymorohism - above example is also that
      standalonmeinterfce sonObjInterface = new son();
      sonObjInterface.standalonmeinterfcegetData();
