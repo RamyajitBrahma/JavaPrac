@@ -6,6 +6,7 @@ public class grandfather {// if class is marked a final then it cant be extended
 	
 	final int grandz = 2;
 
+
 	public void getdataGrandFather() {
 		int i = 10;
 		int grandz = 3;//allowed even though the global var is amrked aa final bcz this is local var

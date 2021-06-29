@@ -11,11 +11,13 @@ public class father extends grandfather {
 		//System.out.println("Inside father get data printing with super"+super.grandfather);
 		grndFthrD();//cant use this if grndFthrD is not mentioned as static
 		System.out.println(father.arg);
+		//System.out.println(fatherz); // cant use fatherz directly bcz it is class level var
 		son sonObj=new son();
 		sonObj.songetdata();
 		//sonObj.grndFthrD();//cant use this if grndFthrD is mentioned as static??????? WHY is this SO
         father fObj = new father();
         fObj.getdataGrandFatherDuplicate();
+
         //fObj.super.getdataGrandFatherDuplicate(); not valid
         //super.getdataGrandFatherDuplicate(); cant use super in a static context
         String GrndFString = fObj.grandfather;

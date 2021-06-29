@@ -14,10 +14,18 @@ public class son extends father implements interface1,standalonmeinterfce{
      sonObj.fatherGetData();
      sonObj.interface1getdata();
      sonObj.interfce2getData();
+
+
      
      //example of typecastring objects 
      // sobObjfather this object will have access to only grandfather methods and variables becuase return type is grandfather, it wont have access to son methods or vars
      grandfather sobObjfather = new son(); // example of reference typecastring
+     father fatherObj = new father();
+     grandfather granfthObj3 = new father(); 
+     interface1 sonObjInterface1 = new son(); // Upcasting can also be done for interface .. this object will have access to all methods and vars of interface1 and interface 2 becuase intrface1 extends interfecae2
+     sonObjInterface1.interface1getdata();
+
+
   // another eway of doing the above typecasting. here also sobObjfather1 will only have access to grandfather vars an methods
      //Super class csn be explicityl typecasted to sublass but not the vice versa
      grandfather sobObjfather1 = (grandfather) sonObj; 
@@ -30,6 +38,7 @@ public class son extends father implements interface1,standalonmeinterfce{
     }
 	
 	public void songetdata(){
+
 		System.out.println("inside son get data");
 		super.getdataGrandFatherDuplicate();// this takes the function of the i9mmediate parent , hence taking it from father and grandfather
 

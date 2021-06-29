@@ -30,7 +30,7 @@ public class collections {
 		arrString.add("Kolkata");
 		arrString.add("Mumbai");
 		arrString.add("Kolkata"); // all classes of list interface can accedpt duplicate values
-		arrString.add(1,"Delhi"); // this add is not present for an integer arraylist
+		arrString.add(1,"Delhi"); //
 		arrString.add("Goa");
 		//arrString.remove(1);
 		//arrString.remove("Kolkata");
@@ -55,10 +55,11 @@ public class collections {
 		 
 		 */
 		 
-		 /*
+		/*
 		
 		//HashSet   - hashset will accept duplicate values
 		// hashset the elements doesnt get stored in sequential order
+		//hashSet deosnit have get(index) or IndexOf methods like list bcz it is not sequentially stored so no one know which index to work on
 		// like arraylist hashset doesnt have the get(i) mentod to fetch the values in each index hence they use an interface names iterator 
 		
 		HashSet<String> hs = new HashSet<String> ();
@@ -76,51 +77,68 @@ public class collections {
 		System.out.println("size:"+hs.size());
 		
 		Iterator<String> hsIt=hs.iterator();
+		//System.out.println("Printing Iterator"+hsIt);  // this gives outout like : Printing Iteratorjava.util.HashMap$KeyIterator@3f8f9dd6
+		//Iterator hsIt=hs.iterator();  // u need to to write <Srring> u can wrie lik this also but u have to cast the retrun type to string see below example
 		while(hsIt.hasNext()) {
-			System.out.println(hsIt.next());
+			String nxtStr = hsIt.next();
+			if(nxtStr.contains("Cambodia")) {
+			   break;
+			}
+			System.out.println(nxtStr);
 		}
 		
+		Iterator hsIt1=hs.iterator();
+		while(hsIt1.hasNext()) {
+			String nxtStr1 = (String) hsIt1.next();	 // this casting is required to convert it to string if u dont write Iterator<String>	
+			System.out.println(nxtStr1);
+		}
 		
 		HashSet<Integer> hsInt = new HashSet<Integer> ();
 		hsInt.add(3);
 		Iterator<Integer> hsIntIt=hsInt.iterator();
+		Iterator hsIntIt1=hsInt.iterator();
 		while(hsIntIt.hasNext()) {
 			System.out.println(hsIntIt.next());
+			System.out.println(hsIntIt1.next());
 		}
 		
 		*/
 		
 		
-		/*
+		///*
 		//HashMap
 		
 		HashMap<Integer,String> hsObj = new HashMap<Integer,String>();
 		hsObj.put(1,"First Val");
 		hsObj.put(2,"second Val");
 		hsObj.put(3,"third Val");
-		hsObj.put(null,"It has a null key");
-		hsObj.put(6,null);
+		hsObj.put(null,"It has a null key");//allowes only one null key
+		hsObj.put(6,null);//allowes multiple null valuyes
 		hsObj.put(1,"Dupklicate First Val");//duplikcate is not allowed it just overrides the previous allocation
-		
+
 		System.out.println("Size is : "+hsObj.size());
 		System.out.println("value of the 2nd Obj : "+hsObj.get(2));
 		System.out.println("value of the 1st/duplicate Obj : "+hsObj.get(1));
+
 		System.out.println("values : "+hsObj.values());
 		System.out.println("keys : "+hsObj.keySet());
 		//System.out.println("keys : "+hsObj);
 		System.out.println("conditions : "+hsObj.containsValue("First Val"));
+		System.out.println(hsObj.containsKey(1));
+		
+		//Iterator setHsObjIT1 = hsObj.Iterator(); // this is not llowed u need to conver the hashMap object to SET by using .entrySet() first to use Iterator 
 		
 		//Changing hashmap to normal set
 		Set setHsObj = hsObj.entrySet();
-		Iterator setHsObjIT = setHsObj.iterator();
+		Iterator<Map.Entry> setHsObjIT = setHsObj.iterator();
 		int i = 0;
 		while(setHsObjIT.hasNext()){
 			//System.out.println(setHsObjIT.next());// this will throw erro it is not like SET interface becuase it has keys an values
-			Map.Entry mpObj = (Map.Entry)setHsObjIT.next();
+			Map.Entry mpObj = setHsObjIT.next();
 			i++;
 			System.out.println(mpObj.getKey());
 			System.out.println(mpObj.getValue());
-			System.out.println(mpObj.setValue("Jit"+i));// this changes the hashmap values
+			mpObj.setValue("Jit"+i);// this changes the hashmap values
 			
 			
 		}
@@ -128,15 +146,23 @@ public class collections {
 		System.out.println("value of the changed 1st Obj : "+hsObj.get(1));
 		System.out.println("value of the changed Obj : "+hsObj.get(2));
 		System.out.println("value of the changed Obj : "+hsObj.get(3));
-	*/	
+	//*/	
 		
 	
-  ///*		
+  /*		
 		//Practixe of arraylist and hashmap example - printing the unique nos in te array and also printing which no is repeated how many times
 		int a[] = {3,4,4,4,6,7,7,8,9,9};
 		ArrayList<Integer> storingNos = new ArrayList<Integer>();
-		
-				
+		//ArrayList<String> strStrings = new ArrayList<String>();
+		storingNos.add(1);
+		storingNos.add(4);
+		storingNos.add(5);
+		storingNos.add(2, 6);
+		System.out.println(storingNos.size());
+		System.out.println(storingNos.get(1));
+		System.out.println(storingNos.indexOf(5));
+		storingNos.remove(1);
+		System.out.println(storingNos);
 		for(int i =0;i<a.length;i++) {
 			int counter = 0;
 			if(!storingNos.contains(a[i])) {
@@ -157,7 +183,7 @@ public class collections {
 			}
 		
 	}
-//*/
+*/
 		
 		/*
 		 Difference between and hashTable read from the rahul shetty udemy lecture 298
