@@ -25,6 +25,8 @@ public class ReturnMultipleVal {
         arrObj.add(gender);
         return arrObj;
         
+        //
+        
      // this is another way of directly adding it as list , in this u dont have to add it individually
         //List<Object> arrObj = Arrays.asList(name,age,gender); // this is one way of directly adding it as list
         //return arrObj;

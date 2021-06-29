@@ -1,0 +1,18 @@
+String can be defined in 2 ways by writting String a or by creat9ing string class
+Can  writre any methods insidde the Puboic static void main
+Java lang package has all String ,Integer etc Java util has Date,calendar,List,Arrays, all collections etc
+Cant use Private class or var inside an Interface becuase interface forces to define its methods in other classes which implements it.
+// variables defijed in interface should always be public
+inside interface var can be  static or non static no problem
+One calss can implement multiple interfaces
+A class can implement 2 interfaces having the same method name , no error will be shown
+
+COLLECTIONS
+List set and Maps are all interfaces ehich has many classes 
+List - ArrayList,LikndedList,velocity   Set - Hashset,TreeSet,LinkedHashset
+List accesspts duplicate values and values are in sequence
+Set doesnot acept duplicate vals nd values r not in sequence
+Difference between HashMap and HashTable 
+HashMap is non synchronised and not thread safe , means only one programme at atime  can access a hashTable
+HashMap used Iterator to iterate thru whereas hashTbale and also Vector uses Enumerator to iterate thru
+MashMap allowes one Null key and multiple Null values whereas HashTable doesnt allow any Null keys or values
